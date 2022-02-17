@@ -1,26 +1,49 @@
 package ru.academits;
 
+import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.Calendar;
-
 public class SeleniumLocalDriverTests {
 
-    public void openPageChromeTest() {
+    @Test
+    public void openPageChromeTest() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver",
-                "C:\\Users\\a.muzhanovskiy\\Desktop chromedriver.exe ");
+                "C:\\Users\\Psycholiric\\Desktop\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
+        driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();
+
+        Thread.sleep(2000);
+        driver.quit();
+    }
+
+    @Test
+    public void openTestWithParameters() throws InterruptedException {
+        WebDriver driver = null;
+
+        String browser = System.getProperty("browser");
+        if(browser.equals("chrome")) {
+            System.setProperty("webdriver.chrome.driver",
+                    "C:\\Users\\Psycholiric\\Desktop\\chromedriver.exe");
+             driver = new ChromeDriver();
+//        } else if (browser.equals("edge")) {
+//            запустить Firefox
+        }
+        driver.get("https://the-internet.herokuapp.com/");
+        driver.manage().window().maximize();
+
+        Thread.sleep(2000);
+        driver.quit();
 
 
+
+        }
 
 
 
     }
 
-    public void getYear() {
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        System.out.println(year);
-    }
-}
+
+
