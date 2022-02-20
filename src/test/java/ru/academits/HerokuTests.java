@@ -37,12 +37,15 @@ public class HerokuTests {
     public void checkCurrentUrl() throws InterruptedException {
         Assertions.assertEquals("https://the-internet.herokuapp.com/", driver.getCurrentUrl());
         Thread.sleep(2000);
+//        проверка URL
     }
 
     @Test
     public void checkTitle() throws InterruptedException {
         Assertions.assertEquals("The Internet", driver.getTitle());
         Thread.sleep(2000);
+        //        проверка название страницы
+
     }
 
     @Test
@@ -53,6 +56,7 @@ public class HerokuTests {
 
         driver.findElement(By.xpath("//a[text()='Form Authentication']")).click();
         driver.findElement(By.id("username")).sendKeys(username);
+
         driver.findElement(By.id("password")).sendKeys(password);
         driver.findElement(By.className("radius")).click();
 
