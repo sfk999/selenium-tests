@@ -75,10 +75,6 @@ public class demoqaTests {
 //        inputSubjects.sendKeys(Keys.ENTER);
 //        скрипт , ошибка element not interactable
 
-
-
-
-
         WebElement checkbox = driver.findElement(By.xpath("//*[text()='Sports']"));
         checkbox.click();
         Assertions.assertTrue(true , checkbox.getAttribute("checked"));
@@ -88,11 +84,9 @@ public class demoqaTests {
 //        uploadPicture.sendKeys("ru/academits/Снимок экрана 2022-02-20 191113.jpg");
 //        uploadPicture
 
-
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
-        currentAddress.sendKeys("Москва");
-        Assertions.assertEquals("Москва" , currentAddress.getAttribute("value"));
-
+        currentAddress.sendKeys("Москва, Тверская, 8");
+        Assertions.assertEquals("Москва, Тверская, 8" , currentAddress.getAttribute("value"));
 
 //        WebElement selectState = driver.findElement(By.id("state"));
 //        selectState.click();
@@ -104,10 +98,6 @@ public class demoqaTests {
 
 
         Thread.sleep(5000);
-
-
-
-
     }
 
     @AfterEach
